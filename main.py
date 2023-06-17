@@ -55,7 +55,7 @@ def face_analyze():
 
     
 def main():
-    print(face_verify(img_1='faces/adr.jpg', img_2='dataset/6.jpg'))
+    print(face_verify(img_1='faces/adr.jpg', img_2='face/em1.jpg'))
     #print(face_recogn())
     #face_analyze()
     

@@ -81,13 +81,16 @@ for image_path in dataset_paths:
         cv2.imwrite(new_face_path, cv2.imread(image_path))
         face_paths.append(new_face_path)
 
+        # Получаем номер q из названия изображения в dataset
+        dataset_image_name = os.path.basename(image_path).split(".")[0]
+        q = int(dataset_image_name) * 5
+
         # Создаем папку с именем n внутри папки "database"
         new_database_folder = os.path.join("_database", str(i))
         os.makedirs(new_database_folder)
 
         # Копируем img_1 в папку "database/n"
-        img_1_index = int(os.path.basename(image_path).split(".")[0])
-        img_1_filename = f"{i}_q{img_1_index * 5}.jpg"
+        img_1_filename = f"0_{q}.jpg"
         img_1_destination = os.path.join(new_database_folder, img_1_filename)
         cv2.imwrite(img_1_destination, cv2.imread(new_face_path))
 
